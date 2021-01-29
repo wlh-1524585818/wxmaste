@@ -1,0 +1,16 @@
+<!--index.wxml-->
+<!-- 渲染页面 -->
+<!-- 循环数据 -->
+<block wx:for="{{goods}}" wx:key="goods">
+<view class="big">
+<!-- 给图片封面设置触摸事件 并且传入id值-->
+<view class="img"><image src="{{item.goods_img}}" bindtap="click" data-goods_id="{{item.goods_id}}"></image></view>
+<!-- 商品信息 -->
+<view class="message">
+  <view class="name">{{item.goods_name}}</view>
+<!-- 判断库存是否为0 -->
+  <view wx:if="{{item.goods_number==0}}" class="price">售完</view>
+  <view wx:else class="price"><text>￥</text>{{item.goods_price}}</view>
+</view>
+</view>
+</block>

@@ -1,0 +1,6 @@
+<!--pages/info/info.wxml-->
+<view>
+  <view>商品名称:{{data.goods_name}}</view>
+  商品图片:<image src="{{data.goods_img}}"></image>
+  商品价格：{{data.goods_price}}
+</view>

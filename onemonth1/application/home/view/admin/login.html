@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js">
+    </script>
+</head>
+<body>
+    用户名: <input type="text" name="admin_name" id="admin_name"><br>
+    密  码: <input type="password" name="admin_pas" id="admin_pas"><br>
+    <button id="sub">登录</button>
+</body>
+</html>
+<script>
+    $(function () {
+        $("#sub").click(function () {
+            var admin_name = $("#admin_name").val()
+            var admin_pas = $("#admin_pas").val()
+            if (admin_name == ""){
+                alert("用户名不能为空")
+            }
+            if (admin_pas == ""){
+                alert("密码不能为空")
+            }
+            $.ajax({
+                url:"{:url('Admin/logins')}",
+                type:"post",
+                data:{admin_name:admin_name,admin_pas:admin_pas},
+                dataType:"json",
+                success:function (res) {
+                    if(res.code == 200){
+                        window.location.href="{:url('admin/adminList')}"
+                    }else{
+                        alert(res.msg)
+                    }
+                }
+            })
+        })
+    })
+</script>

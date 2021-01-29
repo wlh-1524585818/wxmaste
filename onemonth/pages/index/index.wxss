@@ -1,0 +1,26 @@
+/**index.wxss**/
+/* 设置大盒子的属性 */
+.big{
+  display: flex;
+  width: 90%;
+  margin-left: 5%;
+  margin-bottom: 40rpx;
+}
+/* 设置图片的尺寸 */
+.img image{
+  width: 80px;
+  height: 80px;
+  margin-right: 40rpx;
+}
+/* 设置商品名称文字属性 */
+.name{
+  width: 70%;
+  margin: 20rpx auto;
+}
+/* 设置商品价格属性 */
+.price{
+  color: orange;
+  font-weight: 600;
+  width: 70%;
+  margin: 0 auto;
+}
